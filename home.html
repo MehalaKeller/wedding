@@ -65,7 +65,22 @@
 	<![endif]-->
 
 	</head>
-	<body>
+	
+	
+	
+	<script>
+		function decideHeight(){
+			var height1 = document.getElementById('mainCeremony').offsetHeight;
+			var height2 = document.getElementById('weddingReception').offsetHeight;
+			if(height1 > height2){
+				document.getElementById('weddingReception').style.height = height1 + "px";
+			}
+			else{
+				document.getElementById('mainCeremony').style.height = height2 + "px";
+			}
+		}
+	</script>
+	<body onload="decideHeight()">
 		
 	<div class="fh5co-loader"></div>
 	<div id="page">
@@ -73,7 +88,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-xs-2">
-					<div id="fh5co-logo"><a href="index.html">Wedding<strong>.</strong></a></div>
+					<div id="fh5co-logo"><a href="home.html">Wedding<strong>.</strong></a></div>
 				</div>
 				<div class="col-xs-10 text-right menu-1">
 					<ul>
@@ -205,7 +220,7 @@
 					<div class="display-tc">
 						<div class="col-md-10 col-md-offset-1">
 							<div class="col-md-6 col-sm-6 text-center">
-								<div class="event-wrap animate-box">
+								<div class="event-wrap animate-box" id="mainCeremony">
 									<h3>Main Ceremony</h3>
 									<div class="event-col">
 										<i class="icon-clock"></i>
@@ -221,7 +236,7 @@
 								</div>
 							</div>
 							<div class="col-md-6 col-sm-6 text-center">
-								<div class="event-wrap animate-box">
+								<div class="event-wrap animate-box" id="weddingReception">
 									<h3>Wedding Party</h3>
 									<div class="event-col">
 										<i class="icon-clock"></i>

@@ -6,7 +6,7 @@
 	<head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Wedding &mdash; 100% Free Fully Responsive HTML5 Template by FREEHTML5.co</title>
+	<title>Bridal Party</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="Free HTML5 Template by FREEHTML5.CO" />
 	<meta name="keywords" content="free html5, free template, free bootstrap, html5, css3, mobile first, responsive" />
@@ -65,7 +65,58 @@
 	<![endif]-->
 
 	</head>
-	<body>
+	<style>
+	.column {
+  float: left;
+  width: 50%;
+  padding: 10px;
+  height: 300px; /* Should be removed. Only for demonstration */
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.columnParty {
+  float: left;
+  width: 33.33%;
+  padding: 10px;
+  height: 300px; /* Should be removed. Only for demonstration */
+}
+.dot {
+  height: 25px;
+  width: 100%;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+}
+</style>
+	<script>
+		function findHeight(){
+			var divArr = ['fgDiv','rbDiv','bm1Div','bm2Div','mohDiv','gm1Div','gm2Div','bmDiv'];
+			var dotArr = ['fgDot','rbDot','bm1Dot','bm2Dot','mohDot','gm1Dot','gm2Dot','bmDot'];
+			var divWidth = document.getElementById('fgDiv').offsetWidth;
+			var dotWidth = document.getElementById('fgDot').offsetWidth;
+			var i = 0;
+			while(i < divArr.length){
+				if(i == 0 || i == 1){
+					document.getElementById(divArr[i]).style.height = dotWidth + 100 + "px";
+					document.getElementById(dotArr[i]).style.height = dotWidth + "px";
+				}
+				else{
+					divWidth = document.getElementById(divArr[i]).offsetWidth;
+					dotWidth = document.getElementById(dotArr[i]).offsetWidth;
+					document.getElementById(divArr[i]).style.height = dotWidth + 100 + "px";
+					document.getElementById(dotArr[i]).style.height = dotWidth + "px";
+				}
+				i++;
+			}
+			var height = document.getElementById('topRow').offsetHeight;
+		}
+	</script>
+	<body onload="findHeight()">
 		
 	<div class="fh5co-loader"></div>
 	
@@ -153,9 +204,73 @@
 			</div>
 		</div>
 	</header>
-
+	
 	<div id="fh5co-couple" class="fh5co-section-gray">
 		<div class="container">
+			<div class="row" id='topRow'>
+				<div class="column" style="background-color:#aaa;">
+					<h2 id='topRowText' style="font-family: 'Work Sans', Arial, sans-serif; text-align: center; width: 50%; margin: auto;">You Won't Want to Miss This</h2>
+				</div>
+				<div class="column" style="background-color:#bbb;">
+					<h2>Column 2</h2>
+					<p>Some text..</p>
+				</div>
+			</div>
+			<div class="row" style="display: none;">
+				<div id="fgDiv" class="column" style="background-color:#aaa;">
+					<h2>Flower Girl</h2>
+					<div style="margin: auto; width: 50%;">
+						<span id='fgDot' class="dot"></span>
+					</div>
+				</div>
+				<div id="rbDiv" class="column" style="background-color:#bbb;">
+					<h2>Ring Bearer</h2>
+					<div style="margin: auto; width: 50%;">
+						<span id='rbDot' class="dot"></span>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="columnParty" id='bm1Div' style="background-color:#aaa;">
+					<h2>Column 1</h2>
+					<div style="margin: auto; width: 50%;">
+						<span id='bm1Dot' class="dot"></span>
+					</div>
+				</div>
+				<div class="columnParty" id='mohDiv' style="background-color:#bbb;">
+					<h2>Column 2</h2>
+					<div style="margin: auto; width: 50%;">
+						<span id='mohDot' class="dot"></span>
+					</div>
+				</div>
+				<div class="columnParty" id='bm2Div' style="background-color:#aaa;">
+					<h2>Column 1</h2>
+					<div style="margin: auto; width: 50%;">
+						<span id='bm2Dot' class="dot"></span>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="columnParty" id='gm1Div' style="background-color:#aaa;">
+					<h2>Column 1</h2>
+					<div style="margin: auto; width: 50%;">
+						<span id='gm1Dot' class="dot"></span>
+					</div>
+				</div>
+				<div class="columnParty" id='bmDiv' style="background-color:#bbb;">
+					<h2>Column 2</h2>
+					<div style="margin: auto; width: 50%;">
+						<span id='bmDot' class="dot"></span>
+					</div>
+				</div>
+				<div class="columnParty" id='gm2Div' style="background-color:#aaa;">
+					<h2>Column 1</h2>
+					<div style="margin: auto; width: 50%;">
+						<span id='gm2Dot' class="dot"></span>
+					</div>
+				</div>
+			</div>
+			<!--
 			<div class="row">
 				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box" style="margin-bottom: 0;">
 					<h2>The Parents</h2>
@@ -175,27 +290,7 @@
 					</div>
 				</div>
 			</div>
-		</div>
-		<div class="container">
-			<div class="row">
-				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box" style="margin-bottom: 0; margin-top: 75px;">
-					<h2>Bridal Party</h2>
-				</div>
-			</div>
-			<div class="couple-wrap animate-box col-md-12">
-				<div class="couple-half">
-					<div class="groom col-md-6" style="width: 100%; margin-right: 0; text-align: center;">
-						<h3>Charlee Chandler</h3>
-						<img src="images/groom.jpg" style="margin: auto;" alt="groom" class="img-responsive">
-						<h3 class="bp_title">Flower Girl</h3>
-					</div>
-					<div class="groom col-md-6" style="width: 100%; margin-right: 0; text-align: center">
-						<h3>Unknown</h3>
-						<img src="images/groom.jpg" style="margin: auto;" alt="groom" class="img-responsive">
-						<h3 class="bp_title">Ring Bearer</h3>
-					</div>
-				</div>
-			</div>
+			-->
 		</div>
 	</div>
 <!--
